@@ -9,7 +9,6 @@ def load_data():
     df['date'] = pd.to_datetime(df['date'])
     return df
 
-
 def plot_temperature(df):
     plt.figure(figsize=(12,5))
     plt.plot(df['date'], df['temperature'], color='red', label='Temperature')
@@ -19,7 +18,6 @@ def plot_temperature(df):
     plt.legend()
     plt.savefig("outputs/graphs/temperature_trend.png")
     plt.show()
-
 
 def plot_rainfall(df):
     plt.figure(figsize=(12,5))
@@ -31,7 +29,6 @@ def plot_rainfall(df):
     plt.savefig("outputs/graphs/rainfall_trend.png")
     plt.show()
 
-
 def plot_humidity(df):
     plt.figure(figsize=(12,5))
     plt.plot(df['date'], df['humidity'], color='green', label='Humidity')
@@ -42,7 +39,6 @@ def plot_humidity(df):
     plt.savefig("outputs/graphs/humidity_trend.png")
     plt.show()
 
-
 def seasonal_analysis(df):
     df['month'] = df['date'].dt.month
 
@@ -52,7 +48,6 @@ def seasonal_analysis(df):
     plt.title("Monthly Climate Pattern")
     plt.savefig("outputs/graphs/seasonal_pattern.png")
     plt.show()
-
 
 if __name__ == "__main__":
     df = load_data()
