@@ -8,12 +8,10 @@ def load_data():
     df['date'] = pd.to_datetime(df['date'])
     return df
 
-
 def prepare_data(df):
     # Convert dates to numeric format (important for ML)
     df['day_index'] = (df['date'] - df['date'].min()).dt.days
     return df
-
 
 def train_model(df):
     X = df[['day_index']]
@@ -24,7 +22,6 @@ def train_model(df):
 
     print("Model trained successfully!")
     return model
-
 
 def forecast_future(df, model, days=365):
     last_day = df['day_index'].max()
@@ -45,7 +42,6 @@ def forecast_future(df, model, days=365):
 
     return future_df
 
-
 def plot_forecast(df, future_df):
     plt.figure(figsize=(12,5))
 
@@ -61,7 +57,6 @@ def plot_forecast(df, future_df):
 
     plt.savefig("outputs/graphs/temperature_forecast.png")
     plt.show()
-
 
 if __name__ == "__main__":
     df = load_data()
