@@ -7,7 +7,6 @@ def load_data():
     df['date'] = pd.to_datetime(df['date'])
     return df
 
-
 def detect_anomalies(df):
     # Z-score method (standard in data science)
     def zscore(series):
@@ -25,7 +24,6 @@ def detect_anomalies(df):
     print("\nAnomalies detected!")
     return df
 
-
 def plot_temperature_anomalies(df):
     plt.figure(figsize=(12,5))
 
@@ -41,7 +39,6 @@ def plot_temperature_anomalies(df):
     plt.savefig("outputs/graphs/temp_anomalies.png")
     plt.show()
 
-
 def plot_rainfall_anomalies(df):
     plt.figure(figsize=(12,5))
 
@@ -56,7 +53,6 @@ def plot_rainfall_anomalies(df):
     plt.legend()
     plt.savefig("outputs/graphs/rain_anomalies.png")
     plt.show()
-
 
 if __name__ == "__main__":
     df = load_data()
