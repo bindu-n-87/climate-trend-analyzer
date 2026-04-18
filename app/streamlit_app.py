@@ -22,7 +22,6 @@ option = st.sidebar.selectbox(
     ["Overview", "Temperature Trend", "Rainfall Trend", "Humidity Trend"]
 )
 
-# ---------------- OVERVIEW ----------------
 if option == "Overview":
     st.subheader("Dataset Overview")
     st.write(df.head())
@@ -30,7 +29,6 @@ if option == "Overview":
     st.subheader("Basic Statistics")
     st.write(df.describe())
 
-# ---------------- TEMPERATURE ----------------
 elif option == "Temperature Trend":
     st.subheader("Temperature Analysis")
 
@@ -40,7 +38,6 @@ elif option == "Temperature Trend":
 
     st.pyplot(fig)
 
-# ---------------- RAINFALL ----------------
 elif option == "Rainfall Trend":
     st.subheader("Rainfall Analysis")
 
@@ -50,7 +47,6 @@ elif option == "Rainfall Trend":
 
     st.pyplot(fig)
 
-# ---------------- HUMIDITY ----------------
 elif option == "Humidity Trend":
     st.subheader("Humidity Analysis")
 
