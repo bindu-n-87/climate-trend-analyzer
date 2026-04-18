@@ -5,7 +5,6 @@ def load_data():
     df['date'] = pd.to_datetime(df['date'])
     return df
 
-
 def generate_insights(df):
     print("\nCLIMATE TREND ANALYZER - FINAL REPORT\n")
 
@@ -39,7 +38,6 @@ def generate_insights(df):
     print("- Forecasting model predicts future climate behavior")
 
     print("\nProject Completed Successfully!")
-
 
 if __name__ == "__main__":
     df = load_data()
