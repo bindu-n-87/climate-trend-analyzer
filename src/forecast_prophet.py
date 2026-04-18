@@ -7,14 +7,12 @@ def load_data():
     df['date'] = pd.to_datetime(df['date'])
     return df
 
-
 def prepare_data(df):
     # Prophet requires specific column names
     prophet_df = df[['date', 'temperature']].rename(
         columns={'date': 'ds', 'temperature': 'y'}
     )
     return prophet_df
-
 
 def train_model(prophet_df):
     model = Prophet(
@@ -27,12 +25,10 @@ def train_model(prophet_df):
     print("Prophet model trained successfully!")
     return model
 
-
 def forecast(model, periods=365):
     future = model.make_future_dataframe(periods=periods)
     forecast = model.predict(future)
     return forecast
-
 
 def plot_forecast(model, forecast):
     fig = model.plot(forecast)
@@ -43,7 +39,6 @@ def plot_forecast(model, forecast):
     fig2 = model.plot_components(forecast)
     plt.savefig("outputs/graphs/prophet_components.png")
     plt.show()
-
 
 if __name__ == "__main__":
     df = load_data()
